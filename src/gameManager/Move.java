@@ -66,7 +66,7 @@ public class Move {
         return true;
     }
 
-    public void binToDeck(BinDeck bin, MainDeck deck) {
+    public static void binToDeck(BinDeck bin, MainDeck deck) {
         deck.set(bin.reset());
     }
 }

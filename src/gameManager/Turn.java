@@ -68,6 +68,9 @@ public class Turn {
                         if (!(move[0] instanceof MainDeck)) {
                             continue;
                         }
+                        if (move[0].isEmpty()) {
+                            Move.binToDeck(playing.getBinDeck(), playing.getMainDeck());
+                        }
                         ((MainDeck) move[0]).draw();
                         hasDrawn = true;
                     }

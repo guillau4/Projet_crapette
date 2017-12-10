@@ -39,6 +39,10 @@ public class Player {
         return secondDeck;
     }
 
+    public BinDeck getBinDeck() {
+        return binDeck;
+    }
+
     public boolean is(Player p) {
         return p.getPlayerNumber() == playerNumber;
     }
@@ -50,9 +54,6 @@ public class Player {
     }
 
     public CardPile[] getMove() {
-        
-        // TODO
-
-        return new CardPile[]{mainDeck, binDeck};
+        throw new UnsupportedOperationException("Cannot remove card.");
     }
 }
