@@ -1,12 +1,10 @@
 package graphicInterface;
 
-
-import java.awt.Graphics;
-import java.awt.Image;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
 public class GameInterface extends JPanel{
     public void paintComponent(Graphics g){
