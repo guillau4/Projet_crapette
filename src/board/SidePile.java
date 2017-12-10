@@ -11,19 +11,10 @@ package board;
  */
 public class SidePile extends CardPile {
 
-    @Override
-    public void add(Card c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public SidePile() {
+        super();
+        fifo = false;
+        canAdd = true;
+        canRemove = true;
     }
-
-    @Override
-    public Card remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Card get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

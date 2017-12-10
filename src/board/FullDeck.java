@@ -5,6 +5,8 @@
  */
 package board;
 
+import board.Card.Color;
+
 /**
  *
  * @author Titi
@@ -13,21 +15,29 @@ public class FullDeck extends CardPile {
 
     public FullDeck() {
         super();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
-    }
-    
-    public void scramble() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        fifo = true;
+        canAdd = false;
+        canRemove = true;
+
+        init();
     }
 
-    @Override
-    public void add(Card c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void init() {
+        for (int i = 1; i < 14; i++) {
+            cardList.add(new Card(i, Color.CARREAU));
+        }
+        for (int i = 1; i < 14; i++) {
+            cardList.add(new Card(i, Color.COEUR));
+        }
+        for (int i = 1; i < 14; i++) {
+            cardList.add(new Card(i, Color.PIQUE));
+        }
+        for (int i = 1; i < 14; i++) {
+            cardList.add(new Card(i, Color.TREFLE));
+        }
     }
 
-    @Override
-    public Card remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private void scramble() {
 
+    }
 }

@@ -15,15 +15,20 @@ public abstract class CardPile {
 
     protected ArrayList<Card> cardList;
     protected boolean visible;
+    protected boolean canAdd;
+    protected boolean canRemove;
+    protected boolean fifo;
 
     public CardPile() {
         cardList = new ArrayList<>();
     }
 
-    public abstract Card remove();
-
     public void add(Card c) {
-        cardList.add(c);
+        if (canAdd) {
+            cardList.add(c);
+        } else {
+            throw new UnsupportedOperationException("Cannot add card.");
+        }
     }
 
     public Card get(int i) {
@@ -32,5 +37,17 @@ public abstract class CardPile {
 
     public boolean isEmpty() {
         return cardList.isEmpty();
+    }
+
+    public Card remove() {
+        if (canRemove) {
+            if (fifo) {
+                return cardList.remove(0);
+            } else {
+                return cardList.remove(cardList.size() - 1);
+            }
+        } else {
+            throw new UnsupportedOperationException("Cannot remove card.");
+        }
     }
 }

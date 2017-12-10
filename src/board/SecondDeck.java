@@ -5,14 +5,19 @@
  */
 package board;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Titi
  */
 public class SecondDeck extends CardPile {
 
-    @Override
-    public Card remove() {
-        return cardList.remove(cardList.size() - 1);
+    public SecondDeck(ArrayList<Card> cl) {
+        super();
+        cardList = cl;
+        fifo = true;
+        canAdd = false;
+        canRemove = true;
     }
 }

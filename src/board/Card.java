@@ -11,36 +11,56 @@ package board;
  */
 public class Card {
 
+    public enum Color {
+        PIQUE,
+        TREFLE,
+        CARREAU,
+        COEUR
+    }
+    
     private int value;
-    private int color;
+    private Color color;
     private boolean visible;
     private int player;
 
-    public Card(int v, int c) {
+    public Card(int v, Color c) {
         value = v;
         color = c;
         visible = true;
         player = 0;
     }
 
-    public Card(int v, int c, boolean vi) {
+    public Card(int v, Color c, boolean vi) {
         value = v;
         color = c;
         visible = vi;
         player = 0;
     }
 
-    public Card(int v, int c, int p) {
+    public Card(int v, Color c, int p) {
         value = v;
         color = c;
         visible = true;
         player = p;
     }
 
-    public Card(int v, int c, boolean vi, int p) {
+    public Card(int v, Color c, boolean vi, int p) {
         value = v;
         color = c;
         visible = vi;
         player = p;
+    }
+    
+    public boolean sameColor(Color c) {
+        return c == color;
+    }
+    
+    public boolean compatibleColor(Color c) {
+        if (color == Color.TREFLE || color == Color.PIQUE) {
+            return c == Color.TREFLE || c == Color.PIQUE;
+        }
+        else {
+            return c == Color.CARREAU || c == Color.COEUR;
+        }
     }
 }
