@@ -1,6 +1,9 @@
-public class Main {
+import graphicInterface.Fenetre;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Fenetre fen = new Fenetre();
     }
 }

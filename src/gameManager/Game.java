@@ -20,6 +20,6 @@ public class Game {
         player[1] = new Player(1);
         board = new Board(player);
         
-        strat();
+        //strat();
     }
 }
