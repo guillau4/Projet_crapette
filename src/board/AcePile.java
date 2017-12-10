@@ -5,6 +5,8 @@
  */
 package board;
 
+import game.Player;
+
 /**
  *
  * @author Titi
@@ -13,8 +15,17 @@ public class AcePile extends CardPile {
 
     public AcePile() {
         super();
-        fifo = true;
         canAdd = true;
         canRemove = false;
+    }
+
+    @Override
+    public boolean addTest(Card c, Player playing) {
+        Card top = cardList.get(0);
+        if (top.sameColor(c) && top.getValue() - c.getValue() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

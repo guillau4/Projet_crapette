@@ -51,12 +51,21 @@ public class Card {
         player = p;
     }
     
-    public boolean sameColor(Color c) {
-        return c == color;
+    public Color getColor(){
+        return color;
     }
     
-    public boolean compatibleColor(Color c) {
-        if (color == Color.TREFLE || color == Color.PIQUE) {
+    public int getValue(){
+        return value;
+    }
+    
+    public boolean sameColor(Card c) {
+        return c.getColor() == color;
+    }
+    
+    public boolean oppositColor(Card card) {
+        Color c = card.getColor();
+        if (color == Color.CARREAU || color == Color.COEUR) {
             return c == Color.TREFLE || c == Color.PIQUE;
         }
         else {

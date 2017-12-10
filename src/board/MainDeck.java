@@ -16,8 +16,14 @@ public class MainDeck extends CardPile {
     public MainDeck(ArrayList<Card> cl) {
         super();
         cardList = cl;
-        fifo = true;
         canAdd = false;
         canRemove = true;
+    }
+
+    public void set(ArrayList<Card> cl) {
+        if (!cardList.isEmpty()) {
+            throw new UnsupportedOperationException("Main deck is not empty.");
+        }
+        cardList = cl;
     }
 }

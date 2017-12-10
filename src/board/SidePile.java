@@ -5,6 +5,8 @@
  */
 package board;
 
+import game.Player;
+
 /**
  *
  * @author Titi
@@ -13,8 +15,17 @@ public class SidePile extends CardPile {
 
     public SidePile() {
         super();
-        fifo = false;
         canAdd = true;
         canRemove = true;
+    }
+
+    @Override
+    public boolean addTest(Card c, Player playing) {
+        Card top = cardList.get(0);
+        if (top.oppositColor(c) && top.getValue() - c.getValue() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

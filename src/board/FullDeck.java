@@ -15,7 +15,6 @@ public class FullDeck extends CardPile {
 
     public FullDeck() {
         super();
-        fifo = true;
         canAdd = false;
         canRemove = true;
 

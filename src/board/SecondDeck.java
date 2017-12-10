@@ -16,8 +16,11 @@ public class SecondDeck extends CardPile {
     public SecondDeck(ArrayList<Card> cl) {
         super();
         cardList = cl;
-        fifo = true;
         canAdd = false;
         canRemove = true;
+
+        if (cl.size() != 13) {
+            throw new UnsupportedOperationException("Crapette must be 13 cards big.");
+        }
     }
 }

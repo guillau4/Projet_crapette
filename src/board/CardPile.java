@@ -5,6 +5,7 @@
  */
 package board;
 
+import game.Player;
 import java.util.ArrayList;
 
 /**
@@ -17,15 +18,35 @@ public abstract class CardPile {
     protected boolean visible;
     protected boolean canAdd;
     protected boolean canRemove;
-    protected boolean fifo;
+    protected Player owner;
 
     public CardPile() {
         cardList = new ArrayList<>();
     }
 
+    public boolean getCanAdd() {
+        return canAdd;
+    }
+
+    public boolean getCanRemove() {
+        return canRemove;
+    }
+
+    public int getSize() {
+        return cardList.size();
+    }
+
+    public boolean belongsTo(Player p) {
+        return owner.is(p);
+    }
+
+    public boolean addTest(Card c, Player playing) {
+        throw new UnsupportedOperationException("Cannot add card.");
+    }
+
     public void add(Card c) {
         if (canAdd) {
-            cardList.add(c);
+            cardList.add(0, c);
         } else {
             throw new UnsupportedOperationException("Cannot add card.");
         }
@@ -41,11 +62,7 @@ public abstract class CardPile {
 
     public Card remove() {
         if (canRemove) {
-            if (fifo) {
-                return cardList.remove(0);
-            } else {
-                return cardList.remove(cardList.size() - 1);
-            }
+            return cardList.remove(0);
         } else {
             throw new UnsupportedOperationException("Cannot remove card.");
         }
