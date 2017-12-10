@@ -26,7 +26,6 @@ public class Turn {
         playing = p;
         hasDrawn = false;
         setNbFree();
-        makeMoves();
     }
 
     public int getNbFree() {
@@ -46,7 +45,7 @@ public class Turn {
         }
     }
 
-    private void makeMoves() {
+    public void makeMoves() {
 
         CardPile[] move;
 

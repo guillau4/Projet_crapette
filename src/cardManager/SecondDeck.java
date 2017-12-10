@@ -5,6 +5,7 @@
  */
 package cardManager;
 
+import gameManager.Player;
 import java.util.ArrayList;
 
 /**
@@ -14,13 +15,15 @@ import java.util.ArrayList;
 public class SecondDeck extends CardPile {
 
     boolean hasDrawn;
+    protected Player owner;
 
-    public SecondDeck(ArrayList<Card> cl) {
+    public SecondDeck(ArrayList<Card> cl, Player o) {
         super();
         cardList = cl;
         canAdd = false;
         canRemove = true;
         hasDrawn = false;
+        owner = o;
 
         if (cl.size() != 13) {
             throw new UnsupportedOperationException("Crapette must be 13 cards big.");
@@ -29,6 +32,10 @@ public class SecondDeck extends CardPile {
 
     public boolean getHasDrawn() {
         return hasDrawn;
+    }
+
+    public boolean belongsTo(Player p) {
+        return owner.is(p);
     }
 
     public void draw() {

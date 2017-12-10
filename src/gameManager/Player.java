@@ -48,12 +48,13 @@ public class Player {
     }
 
     public void setDecks(ArrayList<Card> main, ArrayList<Card> second) {
-        mainDeck = new MainDeck(main);
-        secondDeck = new SecondDeck(second);
-        binDeck = new BinDeck();
+        mainDeck = new MainDeck(main, this);
+        secondDeck = new SecondDeck(second, this);
+        binDeck = new BinDeck(this);
     }
 
     public CardPile[] getMove() {
-        throw new UnsupportedOperationException("Cannot remove card.");
+        throw new UnsupportedOperationException("Not implemented yet.");
+        //return new CardPile[]{mainDeck, binDeck};
     }
 }

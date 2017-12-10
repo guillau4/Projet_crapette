@@ -21,6 +21,9 @@ public class SidePile extends CardPile {
 
     @Override
     public boolean addTest(Card c, Player playing) {
+        if (isEmpty()) {
+            return true;
+        }
         Card top = cardList.get(0);
         if (top.oppositColor(c) && top.getValue() - c.getValue() == 1) {
             return true;

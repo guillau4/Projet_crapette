@@ -5,6 +5,7 @@
  */
 package cardManager;
 
+import gameManager.Player;
 import java.util.ArrayList;
 
 /**
@@ -14,13 +15,15 @@ import java.util.ArrayList;
 public class MainDeck extends CardPile {
 
     boolean hasDrawn;
-    
-    public MainDeck(ArrayList<Card> cl) {
+    protected Player owner;
+
+    public MainDeck(ArrayList<Card> cl, Player o) {
         super();
         cardList = cl;
         canAdd = false;
         canRemove = true;
         hasDrawn = false;
+        owner = o;
     }
 
     public void set(ArrayList<Card> cl) {
@@ -30,10 +33,14 @@ public class MainDeck extends CardPile {
         cardList = cl;
     }
 
+    public boolean belongsTo(Player p) {
+        return owner.is(p);
+    }
+
     public boolean getHasDrawn() {
         return hasDrawn;
     }
-    
+
     public void draw() {
         hasDrawn = true;
     }

@@ -21,6 +21,9 @@ public class AcePile extends CardPile {
 
     @Override
     public boolean addTest(Card c, Player playing) {
+        if (isEmpty()) {
+            return c.getValue() == 1;
+        }
         Card top = cardList.get(0);
         if (top.sameColor(c) && top.getValue() - c.getValue() == 1) {
             return true;

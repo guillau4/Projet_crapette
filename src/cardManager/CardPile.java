@@ -18,7 +18,6 @@ public abstract class CardPile {
     protected boolean visible;
     protected boolean canAdd;
     protected boolean canRemove;
-    protected Player owner;
 
     public CardPile() {
         cardList = new ArrayList<>();
@@ -37,7 +36,7 @@ public abstract class CardPile {
     }
 
     public boolean belongsTo(Player p) {
-        return owner.is(p);
+        throw new UnsupportedOperationException("This decks has no owner.");
     }
 
     public boolean addTest(Card c, Player playing) {

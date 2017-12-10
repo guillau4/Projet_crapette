@@ -14,10 +14,17 @@ import java.util.ArrayList;
  */
 public class BinDeck extends CardPile {
 
-    public BinDeck() {
+    protected Player owner;
+    
+    public BinDeck(Player o) {
         super();
         canAdd = true;
         canRemove = false;
+        owner = o;
+    }
+
+    public boolean belongsTo(Player p) {
+        return owner.is(p);
     }
 
     @Override

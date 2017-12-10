@@ -6,6 +6,7 @@
 package cardManager;
 
 import cardManager.Card.Color;
+import java.util.ArrayList;
 
 /**
  *
@@ -36,7 +37,11 @@ public class FullDeck extends CardPile {
         }
     }
 
-    private void scramble() {
+    public void scramble() {
 
+    }
+
+    public ArrayList<Card> getDeck() {
+        return cardList;
     }
 }
