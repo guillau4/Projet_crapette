@@ -19,7 +19,7 @@ public class Game {
         player[0] = new Player(0);
         player[1] = new Player(1);
         board = new Board(player);
+        
+        strat();
     }
-    
-    
 }
